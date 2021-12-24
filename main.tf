@@ -6,11 +6,10 @@ provider "aws" {
 
 module "vpc" {
   source                     = "./vpc"
-  vpc_cidr                   = "90.90.0.0/16"
-  public_cidrs_1a            = "90.90.10.0/24"
-  public_cidrs_1b            = "90.90.20.0/24"
-  private_cidrs_1a           = "90.90.11.0/24"
-  private_cidrs_1b           = "90.90.21.0/24"
+  cidr_block                 = "80.80.0.0/16"
+  public_subnet_count        = "2"
+  private_subnet_count       = "2"
+  subnet_bit_size            = "8"
   access_ip                  = var.access_ip
   alb_security_group         = var.alb_security_group
   ec2_security_group         = var.ec2_security_group

@@ -1,24 +1,25 @@
-variable "vpc_cidr" {
-  type = string
+variable "cidr_block" {
+  type        = string
+  description = "The CIDR block for the VPC."
 }
 
-variable "public_cidrs_1a" {
-  type = string
+variable "public_subnet_count" {
+  type        = number
+  description = "The number of public subnets to create in the VPC."
 }
 
-variable "public_cidrs_1b" {
-  type = string
+variable "private_subnet_count" {
+  type        = number
+  description = "The number of private subnets to create in the VPC."
 }
 
-variable "private_cidrs_1a" {
-  type = string
+variable "subnet_bit_size" {
+  type        = number
+  description = "The number size (in bits) to dedicate to each subnet. For example, a value of 8 would allow for 256 hosts in each subnet."
 }
 
-variable "private_cidrs_1b" {
-  type = string
-}
 
-variable "network_interface_id" {}
+/* variable "network_interface_id" {}
 
 variable "service_name" {}
 
@@ -38,4 +39,4 @@ variable "natinstance_security_group" {}
 
 variable "db_subnet_group" {
   type = bool
-}
+} */
